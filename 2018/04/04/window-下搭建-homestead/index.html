@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="等雨" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        window 下搭建 homestead ｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2018/04/04/window-下搭建-homestead/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    等雨
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>window 下搭建 homestead </h1>
+                    
+                    <span class="meta">
+                         作者 chen
+                        <span>
+                          日期 2018-04-04
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            window 下搭建 homestead 
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="Window-下-Homestead-安装"><a href="#Window-下-Homestead-安装" class="headerlink" title="Window 下 Homestead 安装"></a>Window 下 Homestead 安装</h1><p>安装前准备：</p>
+<p>1.安装VirtualBox：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>2.安装Vagrant：<a href="https://releases.hashicorp.com/vagrant/2.0.2/" target="_blank" rel="noopener">https://releases.hashicorp.com/vagrant/2.0.2/</a></p>
+<p>3.下vagrant镜像：<a href="qq://txfile/#" target="_blank" rel="noopener">http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip</a></p>
+<p>4.安装git：<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a></p>
+<h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>安装好Vagrant、virtualBox、Git，下面命令都用Git自带的“Git Bash”来执行</p>
+<h2 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h2><h4 id="1-从coding上把-Homestead仓库下载下来"><a href="#1-从coding上把-Homestead仓库下载下来" class="headerlink" title="1.从coding上把 Homestead仓库下载下来"></a>1.从coding上把 Homestead仓库下载下来</h4><p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://git.coding.net/summerblue/homestead.git Homestead</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-进入Homestead文件夹："><a href="#2-进入Homestead文件夹：" class="headerlink" title="2.进入Homestead文件夹："></a>2.进入Homestead文件夹：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Homestead</span><br></pre></td></tr></table></figure>
+<p>检出5.4.0版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout v5.4.0</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-找到homestead文件下的bash-init-sh-双击运行"><a href="#3-找到homestead文件下的bash-init-sh-双击运行" class="headerlink" title="3.找到homestead文件下的bash init.sh 双击运行"></a>3.找到homestead文件下的bash init.sh 双击运行</h4><h4 id="4-在Homestead目录下创建Code目录做代码映射："><a href="#4-在Homestead目录下创建Code目录做代码映射：" class="headerlink" title="4.在Homestead目录下创建Code目录做代码映射："></a>4.在Homestead目录下创建Code目录做代码映射：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir Code</span><br></pre></td></tr></table></figure>
+<h4 id="5-在Homestead目录下的homestead-yaml配置文件内，根据自己的需求进行配置，"><a href="#5-在Homestead目录下的homestead-yaml配置文件内，根据自己的需求进行配置，" class="headerlink" title="5.在Homestead目录下的homestead.yaml配置文件内，根据自己的需求进行配置，"></a>5.在Homestead目录下的homestead.yaml配置文件内，根据自己的需求进行配置，</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">ip: &quot;192.168.10.10&quot;</span><br><span class="line">memory: 2048</span><br><span class="line">cpus: 1</span><br><span class="line">provider: virtualbox</span><br><span class="line"></span><br><span class="line"># authorize: ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line"># keys:</span><br><span class="line">#     - ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">folders:</span><br><span class="line">    - map: ~/Code #自己电脑上的项目路径</span><br><span class="line">      to: /home/vagrant/Code</span><br><span class="line">#站点配置web服务器配置</span><br><span class="line">sites:</span><br><span class="line">    - map: homestead.app #域名</span><br><span class="line">      to: /home/vagrant/Code/Laravel/public #域名的映射地址</span><br><span class="line">#数据库配置</span><br><span class="line">databases:</span><br><span class="line">    - homestead</span><br><span class="line"></span><br><span class="line"># blackfire:</span><br><span class="line">#     - id: foo</span><br><span class="line">#       token: bar</span><br><span class="line">#       client-id: foo</span><br><span class="line">#       client-token: bar</span><br><span class="line"></span><br><span class="line"># ports:</span><br><span class="line">#     - send: 50000</span><br><span class="line">#       to: 5000</span><br><span class="line">#     - send: 7777</span><br><span class="line">#       to: 777</span><br><span class="line">#       protocol: udp</span><br></pre></td></tr></table></figure>
+<h4 id="6-安装homestead盒子"><a href="#6-安装homestead盒子" class="headerlink" title="6.安装homestead盒子"></a>6.安装homestead盒子</h4><p>命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add laravel/homestead</span><br></pre></td></tr></table></figure></p>
+<p>这个命令会下载Homestead盒子大小 1G，因为是国外的网，速度超级慢，所以建议可以用下载工具直接下载Homestead盒子下来。链接：<a href="http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip" target="_blank" rel="noopener">http://download.fsdhub.com/lt-homestead-3-0-0-2017082400.zip</a> 将下载的文件解压放到 homestead根目录下</p>
+<p>然后输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add  metadata.json</span><br></pre></td></tr></table></figure></p>
+<h4 id="7-最后执行命令："><a href="#7-最后执行命令：" class="headerlink" title="7.最后执行命令："></a>7.最后执行命令：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vagrant up</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">#### 8.执行命令：vagrant ssh  登陆到虚拟机</span><br><span class="line"></span><br><span class="line">#### 9.用命令 cd  进入到 vagrant 目录下的 Code 文件内（同本地主机的Homestead/Code是同一目录）</span><br><span class="line"></span><br><span class="line">#### 10.用composer进行安装，由于外网原因所以，先把composer的镜像换成中国镜像</span><br><span class="line"></span><br><span class="line">命令：</span><br></pre></td></tr></table></figure>
+<p>composer config -g repo.packagist composer <a href="https://packagist.phpcomposer.com" target="_blank" rel="noopener">https://packagist.phpcomposer.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 11.通过composer 安装laravel</span><br></pre></td></tr></table></figure></p>
+<p>composer create-project laravel/laravel=5.5.* –prefer-dist<br><code>`</code></p>
+<p>一些vagrant 命令：  vagrant halt  关机；  vagrant suspend 挂起；vagrant destroy 销毁； vagrant up 打开</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/04/04/hello-world/" data-toggle="tooltip" data-placement="top"
+                           title="">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Window-下-Homestead-安装"><span class="toc-text">Window 下 Homestead 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步："><span class="toc-text">第一步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步："><span class="toc-text">第二步：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-从coding上把-Homestead仓库下载下来"><span class="toc-text">1.从coding上把 Homestead仓库下载下来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-进入Homestead文件夹："><span class="toc-text">2.进入Homestead文件夹：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-找到homestead文件下的bash-init-sh-双击运行"><span class="toc-text">3.找到homestead文件下的bash init.sh 双击运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-在Homestead目录下创建Code目录做代码映射："><span class="toc-text">4.在Homestead目录下创建Code目录做代码映射：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-在Homestead目录下的homestead-yaml配置文件内，根据自己的需求进行配置，"><span class="toc-text">5.在Homestead目录下的homestead.yaml配置文件内，根据自己的需求进行配置，</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-安装homestead盒子"><span class="toc-text">6.安装homestead盒子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-最后执行命令："><span class="toc-text">7.最后执行命令：</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 等雨 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
